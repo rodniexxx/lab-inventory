@@ -8,7 +8,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <li><a href="dashboard.php" class="<?= $current_page === 'dashboard.php' ? 'active' : '' ?>">Dashboard</a></li>
         <li><a href="dashboard1.php" class="<?= $current_page === 'dashboard1.php' ? 'active' : '' ?>">List Of All Items</a></li>
         <li><a href="borrow_items.php" class="<?= $current_page === 'borrow_items.php' ? 'active' : '' ?>">Borrowed Items</a></li>
-        <li><a href="logout.php">Logout</a></li>
+        <li><a href="register.php" class="<?= $current_page === 'register.php' ? 'active' : '' ?>">Manage Account</a></li>
+        <li><a href="logout.php" class="<?= $current_page === 'logout.php' ? 'active' : '' ?>">Logout</a></li>
     </ul>
 </div>
 

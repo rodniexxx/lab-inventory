@@ -18,7 +18,7 @@ if (!$item) die("Item not found.");
 <head>
     <meta charset="UTF-8">
     <title>Item Details #<?= $item['id'] ?></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 <div class="wrapper">
