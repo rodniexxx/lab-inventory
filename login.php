@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <img src="logo1.png" alt="Lab Inventory Logo" class="panel-logo">
                 <div>
                     <h3>Casaul</h3>
-                    <p>Computer Laboratory Inventory</p>
+                    <p>Computer Laboratory Inventory System</p>
                 </div>
             </div>
         </div>

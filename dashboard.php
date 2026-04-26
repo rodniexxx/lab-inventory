@@ -76,7 +76,7 @@ $productTotals = array_column($productData, 'total');
 
 <div class="main-content">
 <header>
-    <h1>Casaul Computer Laboratory Inventory</h1>
+    <h1>Casaul Computer Laboratory Inventory System</h1>
     <h3>Welcome, <?= htmlspecialchars($_SESSION['username'])?>!</h3>
 </header>
 
