@@ -63,7 +63,7 @@ $productTotals = array_column($productData, 'total');
 <head>
 <meta charset="UTF-8">
 <title>Dashboard - Computer Lab Inventory</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="main.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 </head>
@@ -119,7 +119,7 @@ $productTotals = array_column($productData, 'total');
                 <p>Serial: <?= htmlspecialchars($item['serial_number']) ?></p>
                 <p>Category: <?= htmlspecialchars($item['category']) ?></p>
                 <p>Quantity: <?= $item['quantity'] ?></p>
-                <p><?= htmlspecialchars($item['status']) ?></p>
+                <p><span class="status status-<?= strtolower(str_replace(' ', '-', $item['status'])) ?>"><?= htmlspecialchars($item['status']) ?></span></p>
 
             <div style="margin-top:10px; display:flex; flex-direction:column; gap:6px;">
 

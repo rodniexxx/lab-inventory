@@ -37,39 +37,49 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <title>Login - Lab Inventory</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="login.css">
 </head>
 <body>
 
-<div class="shape one"></div>
-<div class="shape two"></div>
-
-<div class="login-card">
-    <h2>Admin Login</h2>
-
-    <?php if ($error): ?>
-        <p class="error"><?= htmlspecialchars($error) ?></p>
-    <?php endif; ?>
-
-    <form method="post">
-        <div class="input-group">
-            <i class="fas fa-envelope"></i>
-            <input type="text" name="username" placeholder="Email" required autofocus>
-        </div>
-        <div class="input-group">
-            <i class="fas fa-lock"></i>
-            <input type="password" name="password" placeholder="Password" required>
+<div class="page-wrap">
+    <div class="login-card">
+        <div class="login-side login-side--image">
+            <div class="image-overlay"></div>
+            <div class="brand-block">
+                <img src="logo1.png" alt="Lab Inventory Logo" class="panel-logo">
+                <div>
+                    <h3>Casaul</h3>
+                    <p>Computer Laboratory Inventory</p>
+                </div>
+            </div>
         </div>
 
-        <div class="options">
-            <label><input type="checkbox" name="remember"> Remember me</label>
-           
+        <div class="login-side login-side--form">
+            <div class="login-header">
+                <h1>Admin Login</h1>
+            </div>
+
+            <?php if ($error): ?>
+                <p class="error"><?= htmlspecialchars($error) ?></p>
+            <?php endif; ?>
+
+            <form method="post">
+                <div class="input-group">
+                    <i class="fas fa-envelope"></i>
+                    <input type="text" name="username" placeholder="Username" required autofocus>
+                </div>
+                <div class="input-group">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" name="password" placeholder="Password" required>
+                </div>
+
+                <button type="submit">Login</button>
+
+            </form>
+
+            <p class="terms">Manage and track computer lab inventory easily. here in DRLCEFI.</p>
         </div>
-
-        <button type="submit">Login</button>
-
-        
-    </form>
+    </div>
 </div>
 
 </body>

@@ -52,7 +52,7 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
 <head>
     <meta charset="UTF-8">
     <title>list of All Items</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 
@@ -63,7 +63,7 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
 
     <div class="main-content">
         <div class="controls">
-            <form method="get" style="display:flex; gap:15px; flex-wrap:wrap;">
+            <form method="get" style="display:flex; gap:5px; flex-wrap:wrap;">
                 <input type="search" name="search" placeholder="Search name, serial, notes..." 
                        value="<?= htmlspecialchars($search) ?>">
                 
@@ -91,14 +91,13 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
 
                 <button type="submit" class="btn btn-add">Search</button>
                 <a href="dashboard.php" class="btn">Reset</a>
-            </form>
-
-            <a href="excel.php?search=<?= urlencode($search) ?>&category=<?= urlencode($category) ?>&sort=<?= urlencode($sort) ?>&order=<?= urlencode($order) ?>" 
+                <a href="add.php" class="btn btn-add">Add Item</a>
+                <a href="excel.php?search=<?= urlencode($search) ?>&category=<?= urlencode($category) ?>&sort=<?= urlencode($sort) ?>&order=<?= urlencode($order) ?>" 
                 class="btn btn-download">
-                Export
+                Print
             </a>
             
-            <a href="add.php" class="btn btn-add" style="margin-left:auto;">+ Add New Item</a>
+            </form>
         </div>
 
        <div class="inventory-table">
@@ -138,8 +137,10 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
 
                 <td><?= htmlspecialchars($item['quantity']) ?></td>
 
-                <td class="status status-<?= strtolower(str_replace(' ', '-', $item['status'])) ?>">
-                    <?= htmlspecialchars($item['status']) ?>
+                <td>
+                    <span class="status status-<?= strtolower(str_replace(' ', '-', $item['status'])) ?>">
+                        <?= htmlspecialchars($item['status']) ?>
+                    </span>
                 </td>
 
                 <td><?= htmlspecialchars($item['location'] ?: '-') ?></td>
@@ -147,11 +148,13 @@ $categories = $cat_stmt->fetchAll(PDO::FETCH_COLUMN);
                 <td><?= htmlspecialchars($item['last_updated']) ?></td>
 
                 <td>
-                    <a href="view.php?id=<?= $item['id'] ?>" class="btn btn-view">View</a>
-                    <a href="edit.php?id=<?= $item['id'] ?>" class="btn btn-edit">Edit</a>
-                    <a href="delete.php?id=<?= $item['id'] ?>" 
-                       class="btn btn-delete" 
-                       onclick="return confirm('Really delete this item?')">Delete</a>
+                    <div class="table-actions">
+                        <a href="view.php?id=<?= $item['id'] ?>" class="btn btn-view">View</a>
+                        <a href="edit.php?id=<?= $item['id'] ?>" class="btn btn-edit">Edit</a>
+                        <a href="delete.php?id=<?= $item['id'] ?>" 
+                           class="btn btn-delete" 
+                           onclick="return confirm('Really delete this item?')">Delete</a>
+                    </div>
                 </td>
             </tr>
         <?php endforeach; ?>

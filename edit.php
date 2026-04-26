@@ -108,7 +108,7 @@ $stmt->execute([$name, $serial ?: null, $category, $quantity, $status, $location
 <head>
     <meta charset="UTF-8">
     <title>Edit Item #<?= $item['id'] ?></title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
 <div class="wrapper">
