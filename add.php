@@ -93,8 +93,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <option value="Keyboard">Keyboard</option>
                     <option value="Mouse">Mouse</option>
                     <option value="Printer">Printer</option>
-                    <option value="Printer">Projector</option>
-                    <option value="Printer">Modem</option>
+                    <option value="Projector">Projector</option>
+                    <option value="Modem">Modem</option>
                     <option value="Other" selected>Other</option>
                 </select>
             </div>

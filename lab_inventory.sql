@@ -12,7 +12,7 @@ CREATE TABLE items (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) NOT NULL,             
     serial_number VARCHAR(50) UNIQUE,        
-    category ENUM('Computer','Monitor','Keyboard','Mouse','Printer','Other') DEFAULT 'Other',
+    category ENUM('Computer','Monitor','Keyboard','Mouse','Printer', 'Modem', 'Projector', 'Other') DEFAULT 'Other',
     quantity INT DEFAULT 1,
     status ENUM('Working','Damaged','Disposed','In Repair') DEFAULT 'Working',
     description TEXT,

@@ -143,7 +143,7 @@ $stmt->execute([$name, $serial ?: null, $category, $quantity, $status, $location
                 <label>Category</label>
                 <select name="category" required>
                     <?php
-                    $categories = ['Computer', 'Monitor', 'Keyboard', 'Mouse', 'Printer', 'Other'];
+                    $categories = ['Computer', 'Monitor', 'Keyboard', 'Mouse', 'Printer', 'Modem', 'Projector', 'Other'];
                     foreach ($categories as $cat) {
                         $selected = ($item['category'] === $cat) ? 'selected' : '';
                         echo "<option value=\"$cat\" $selected>$cat</option>";
